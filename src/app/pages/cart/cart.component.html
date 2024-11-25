@@ -1,0 +1,123 @@
+<div class="header">
+    <i><svg xmlns="http://www.w3.org/2000/svg" width="70" height="68" viewBox="0 0 70 68" fill="none">
+        <path d="M27.8571 63.5C27.4857 63.5 26.8949 63.3574 26.4037 62.9205C25.9291 62.4984 25.5 61.7594 25.5 60.4706V46.53L35 34.7947L44.5 46.53V60.4706C44.5 61.7594 44.0709 62.4984 43.5963 62.9205C43.1051 63.3574 42.5143 63.5 42.1429 63.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M27.8571 2.5C27.4857 2.5 26.8949 2.64259 26.4037 3.07949C25.9291 3.50161 25.5 4.24061 25.5 5.52941V19.47L35 31.2053L44.5 19.47V5.52941C44.5 4.24061 44.0709 3.50161 43.5963 3.07949C43.1051 2.64259 42.5143 2.5 42.1429 2.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M4.5 25.8571C4.5 25.4857 4.64259 24.8949 5.07949 24.4037C5.50161 23.9291 6.24061 23.5 7.52941 23.5L21.47 23.5L33.2053 33L21.47 42.5L7.52941 42.5C6.24061 42.5 5.50161 42.0709 5.07949 41.5963C4.64259 41.1051 4.5 40.5143 4.5 40.1429L4.5 25.8571Z" fill="#2168F3" stroke="#2168F3"/>
+        <path d="M65.5 25.8571C65.5 25.4857 65.3574 24.8949 64.9205 24.4037C64.4984 23.9291 63.7594 23.5 62.4706 23.5L48.53 23.5L36.7947 33L48.53 42.5L62.4706 42.5C63.7594 42.5 64.4984 42.0709 64.9205 41.5963C65.3574 41.1051 65.5 40.5143 65.5 40.1429L65.5 25.8571Z" stroke="#2168F3"/>
+        </svg>
+    </i>
+    <p>PlayGround Central</p>
+</div>
+<div class="myCart_container">
+    <div>My Cart</div>
+    <div>
+        <div class="payment1" [routerLink]="['/view-order']">
+            View order
+        </div>
+    </div>
+</div>
+<div class="added_container" *ngIf="deleted">
+    <div class="success_wrapper">
+        <div class="alert alert-success" role="alert">
+            Item remove to cart successfully
+        </div>
+    </div>
+</div>
+<div class="cart_empty" *ngIf="!cartItem || cartItem.length === 0;else showCart">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4062 12C19.4062 9.46294 21.4629 7.40625 23.9999 7.40625C26.537 7.40625 28.5937 9.46294 28.5937 12V12.5936H19.4062V12ZM16.5937 15.4061V18C16.5937 18.7766 17.2233 19.4062 17.9999 19.4062C18.7766 19.4062 19.4062 18.7766 19.4062 18V15.4061H28.5937V18C28.5937 18.7766 29.2233 19.4062 29.9999 19.4062C30.7766 19.4062 31.4062 18.7766 31.4062 18V15.4061H34.6978L36.4815 38.5936H11.5186L13.3023 15.4061H16.5937ZM16.5937 12.5936V12C16.5937 7.90964 19.9096 4.59375 23.9999 4.59375C28.0903 4.59375 31.4062 7.90964 31.4062 12V12.5936H36.0001C36.7349 12.5936 37.3458 13.1594 37.4022 13.892L39.4022 39.892C39.4322 40.2826 39.298 40.6679 39.0319 40.9553C38.7657 41.2427 38.3918 41.4061 38.0001 41.4061H10.0001C9.60836 41.4061 9.23441 41.2427 8.96827 40.9553C8.70213 40.6679 8.56791 40.2826 8.59796 39.892L10.598 13.892C10.6543 13.1594 11.2652 12.5936 12.0001 12.5936H16.5937Z" fill="black"/>
+    </svg>
+    Your cart is empty
+</div>
+<ng-template #showCart>
+    <div class="product_container" *ngFor="let item of cartItem">
+        <div class="product_wrapper">
+            <div class="img_wrapper">
+                <img class="cart_image" src="{{path}}{{item.image}}" alt="Product Image">
+            </div>
+            <div class="item_details">
+                Product Name
+                <p>{{item.item_name}}</p>
+                Product Price
+                <p>&#8369; {{item.price}}</p>
+            </div>
+            <div class="close_quantity">
+                <div class="x_button" (click)="showMessage(item)">
+                    <i class="x_logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="#33363F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </i>
+                </div>
+                <div class="quantity_button">
+                    <div class="quantity_container">
+                        <button (click)="subtract(item)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14"      height="2" viewBox="0 0 14 2" fill="none">
+                                <path d="M13 1L1 0.999999" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <input type="text"[ngModel]="item.quantity" readonly>
+                        <button (click)=" Add(item)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 6L12 18" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 12L6 12" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<div class="error_message" *ngIf="danger" >
+    <div class="wrap">
+        <p class="text-danger">Minimum 1 per order</p>
+    </div>
+</div>
+<div class="subtotal_container">
+    <div class="subtotal_wrapper">
+        <div class="subtotal">Total</div>
+        <div class="total">
+            <app-loader *ngIf="isLoad;else amount"></app-loader>
+            <ng-template #amount>
+                {{totalSum | commaSeparated}}
+            </ng-template>
+        </div>
+    </div>
+</div>
+<div class="button_container">
+    <div class="button_wrapper">
+        <div class="buyMore" [routerLink]="['/shop/console']" >
+            Buy More
+        </div>
+        <div class="payment" (click)="update()">
+            Proceed to Payment
+        </div>
+    </div>
+</div>
+<div class="confirmRemove" *ngIf="deleteShow">
+    <div class="delete_wrapper">
+        <div class="title">
+            Remove Item
+        </div>
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>
+              Are you sure you want to remove item {{itemName}}?
+            </div>
+        </div>
+        <div class="button_container1">
+            <div class="button_wrapper">
+                <div (click)="hideMessage()" class="buyMore" style="background-color: #2168F3; border: none; cursor: pointer;">
+                    Cancel
+                </div>
+                <div (click)="removeItem()" class="payment" style="background-color: rgb(228, 31, 31); border: none; cursor: pointer;">
+                    Remove
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+main {
+    overflow-x: hidden;
+}
+.controller_contianer {
+    margin-top: 5px;
+    height: 100vh;
+    margin-top: 100px;
+}
+.text_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1D1919;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    padding-top: 120px;
+}
+.text_container > div {
+    margin-bottom: 30px;
+}
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    margin-top:20px;
+}
+.button {
+    width:150px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #2168F3;
+    color: #FFF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.img_container {
+    display: none;
+}
+@media screen and (min-width: 1000px) {
+    .controller_contianer {
+        display: flex;
+    }
+    .text_container {
+        flex: 1;
+    }
+    .img_container {
+        flex: 1.2;
+        display: block;
+        position: relative;
+    }
+    .img_container > img {
+        position: absolute;
+    }
+    .blue_controller {
+        width: 800px;
+        z-index: -1;
+        top: 20px;
+        left: -90px;
+    }
+    .white_controller {
+        width: 500px;
+        bottom: 100px;
+        right: 0px;
+        z-index: -1;
+    }
+    .text_container {
+        font-size: 50px;
+    }
+}
+/* PS5 Container */
+.ps5_container {
+    height: 100vh;
+    background-color: #414B5F;
+}
+.ps5_info_container {
+    margin-top: 30px;
+}
+.console_container > img {
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.description_container {
+    color: white;
+    margin-top: 20px;
+    padding: 20px;
+}
+.console_container {
+    display: flex;
+    justify-content: center;
+}
+.ps5_logo {
+    display: flex;
+    justify-content: center;
+}
+@media screen and (min-width: 1000px) {
+    .ps5_container {
+        display: flex;
+    }
+    .console_container {
+        flex: 1.4;
+        display: flex;
+        align-items: center;
+    }
+    .ps5_info_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .console_container > img {
+        width: 500px;
+        height: 250px;
+    }
+}

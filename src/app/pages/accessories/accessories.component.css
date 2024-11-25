@@ -1,0 +1,229 @@
+.search_container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.wrap{
+    width: 50%;
+    position: relative;
+}
+.wrap > input {
+    width: 100%;
+    outline: none;
+    background-color: #D9D9D9;
+    border: none;
+    height: 31px;
+    padding-left: 35px;
+}
+.search_logo {
+    position: absolute;
+    top: 1px;
+}
+.product_container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.product {
+    border: 1px solid #2168F3;
+    height: 270px;
+    cursor: pointer;
+}
+
+.img_container {
+    height: 170px;
+    display: flex;
+    justify-content: center;
+}
+.wrapper {
+    width: 65%;
+}
+.wrapper > img {
+    height: 100%;
+    width: 100%;
+}
+.name_container {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.version_container {
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.price_container {
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+@media screen and (min-width: 1000px) {
+    .product_container {
+        padding: 10px 30px;
+        grid-template-columns: 200px 200px;
+        justify-content: space-evenly;
+    }
+}
+
+
+
+/*View Product Section*/
+.view_product_container {
+    position: absolute;
+    top: 140px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.view_product {
+    width: 93%;
+    border: 1px solid black;
+    background-color: white;
+}
+.close_button {
+    display: flex;
+    justify-content: end;
+    padding: 10px 15px;
+}
+.close_button > i {
+    cursor: pointer;
+}
+.main_container {
+    display: flex;
+    flex-direction: column;
+}
+.product_img {
+    flex: 1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.product_details {
+    flex: 1;
+    height: 100px;
+}
+
+.img_wrapper {
+    width: 40%;
+    height: 230px;
+}
+.img_wrapper > img {
+    width: 100%;
+    height: 100%;
+}
+.title, .description, .price {
+    padding-left: 10px;
+}
+.button_container {
+    height: 50px;
+    display: flex;
+}
+.quantity_container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error {
+    color: red;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.quantity_container > button {
+    width: 40px;
+    height:30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+.quantity_container > input{
+    width: 40px;
+    height: 30px;
+    border: none;
+    border:1px solid black;
+    padding-left: 15px;
+    background-color: #D9D9D9;
+}
+.addcart_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 80%;
+    height: 100%;
+    background-color:#D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.buynow_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.buy {
+    width: 80%;
+    height: 100%;
+    background-color:#2168F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+.total_container {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.added_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.success_wrapper {
+    width: 30%;
+}
+@media screen and (min-width: 1000px) {
+    .view_product_container {
+        top: 165px;
+    }
+    .view_product {
+        width: 54%;
+    }
+    .main_container {
+        flex-direction: row;
+    }
+    .button_container {
+        margin-top: 150px;
+    }
+}
+img {
+    width: 400px;
+}
+.ps5_logo_container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 300px;
+    width: 100%;
+    z-index: -2;
+}

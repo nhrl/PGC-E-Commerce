@@ -1,0 +1,270 @@
+.search_container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.wrap{
+    width: 50%;
+    position: relative;
+}
+.wrap > input {
+    width: 100%;
+    outline: none;
+    background-color: #D9D9D9;
+    border: none;
+    height: 31px;
+    padding-left: 35px;
+}
+.search_logo {
+    position: absolute;
+    top: 1px;
+}
+main {
+    margin-top: 10px;
+    background-color: #2B2525;
+}
+.title {
+    color: white;
+    width: 100%;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    position:absolute;
+}
+.img_container {
+    position: relative;
+}
+.game {
+    position: absolute;
+    right: 10px;
+    height: 200px;
+    width: 200px;
+    top: 23%;
+}
+.mainbg {
+    object-fit:fill;
+    height: 100%;
+    width: 100%;
+}
+
+.console {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .img_container {
+        height: 500px;
+    }
+    .title {
+        display: block;
+        padding-left: 5%;
+        padding-top: 90px;
+        font-size: 40px;
+    }
+    .game {
+        height: 300px;
+        width: 300px;
+        right: 25%;
+        top: 30%;
+    }
+    .console {
+        display: inline;
+        position: absolute;
+        right: 0;
+        top: 80px;
+    }
+}
+
+/*PS5 games container*/
+.ps5Games_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid white;
+}
+.wrapper {
+    width: 80%;
+}
+.title1 {
+    color: white;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 20px;
+}
+.game_container {
+    width: 70%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-bottom: 10px;
+}
+.product {
+    height: 200px;
+    cursor: pointer;
+}
+.image {
+    height: 80%;
+}
+.product_image {
+    height: 100%;
+    width: 100%;
+}
+.name {
+    color:white;
+    padding-left: 5px;
+}
+.added_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.success_wrapper {
+    width: 30%;
+}
+@media screen and (min-width: 1000px) {
+    .title1{
+        font-size: 36px;
+    }
+    .game_container {
+        grid-template-columns: 150px 150px 150px 150px 150px;
+    }
+    
+}
+/*View Product Section*/
+.view_product_container {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.view_product {
+    width: 93%;
+    border: 1px solid black;
+    background-color: white;
+}
+.close_button {
+    display: flex;
+    justify-content: end;
+    padding: 10px 15px;
+}
+.close_button > i {
+    cursor: pointer;
+}
+.main_container {
+    display: flex;
+    flex-direction: column;
+}
+.product_img {
+    flex: 1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+.product_details {
+    flex: 1;
+    height: 100px;
+}
+
+.img_wrapper {
+    width: 40%;
+    height: 230px;
+}
+.img_wrapper > img {
+    width: 100%;
+    height: 100%;
+}
+.title2, .description, .price {
+    padding-left: 10px;
+}
+.button_container {
+    height: 50px;
+    display: flex;
+}
+.quantity_container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error {
+    color: red;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.quantity_container > button {
+    width: 40px;
+    height:30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+.quantity_container > input{
+    width: 40px;
+    height: 30px;
+    border: none;
+    border:1px solid black;
+    padding-left: 15px;
+    background-color: #D9D9D9;
+}
+.addcart_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 80%;
+    height: 100%;
+    background-color:#D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.buynow_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.buy {
+    width: 80%;
+    height: 100%;
+    background-color:#2168F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+.total_container {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+@media screen and (min-width: 1000px) {
+    .view_product_container {
+        top: 165px;
+    }
+    .view_product {
+        width: 54%;
+    }
+    .main_container {
+        flex-direction: row;
+    }
+    .button_container {
+        margin-top: 150px;
+    }
+}

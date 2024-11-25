@@ -1,0 +1,50 @@
+<div class="header">
+    <i><svg xmlns="http://www.w3.org/2000/svg" width="70" height="68" viewBox="0 0 70 68" fill="none">
+        <path d="M27.8571 63.5C27.4857 63.5 26.8949 63.3574 26.4037 62.9205C25.9291 62.4984 25.5 61.7594 25.5 60.4706V46.53L35 34.7947L44.5 46.53V60.4706C44.5 61.7594 44.0709 62.4984 43.5963 62.9205C43.1051 63.3574 42.5143 63.5 42.1429 63.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M27.8571 2.5C27.4857 2.5 26.8949 2.64259 26.4037 3.07949C25.9291 3.50161 25.5 4.24061 25.5 5.52941V19.47L35 31.2053L44.5 19.47V5.52941C44.5 4.24061 44.0709 3.50161 43.5963 3.07949C43.1051 2.64259 42.5143 2.5 42.1429 2.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M4.5 25.8571C4.5 25.4857 4.64259 24.8949 5.07949 24.4037C5.50161 23.9291 6.24061 23.5 7.52941 23.5L21.47 23.5L33.2053 33L21.47 42.5L7.52941 42.5C6.24061 42.5 5.50161 42.0709 5.07949 41.5963C4.64259 41.1051 4.5 40.5143 4.5 40.1429L4.5 25.8571Z" fill="#2168F3" stroke="#2168F3"/>
+        <path d="M65.5 25.8571C65.5 25.4857 65.3574 24.8949 64.9205 24.4037C64.4984 23.9291 63.7594 23.5 62.4706 23.5L48.53 23.5L36.7947 33L48.53 42.5L62.4706 42.5C63.7594 42.5 64.4984 42.0709 64.9205 41.5963C65.3574 41.1051 65.5 40.5143 65.5 40.1429L65.5 25.8571Z" stroke="#2168F3"/>
+        </svg>
+    </i>
+    <p>PlayGround Central</p>
+</div>
+<div class="container" *ngIf="userInvalid">
+    <div class="wrap">
+        <div  class="alert alert-danger" role="alert">
+            Error! Invalid Credentials
+          </div>
+    </div>
+</div>
+<div class="text_container">
+    <p>Login to PlayGround Central</p>
+</div>
+<div class="input_container">
+    <div class="input_border">
+        <div class="wrapper">
+            <form [formGroup]="customer" (ngSubmit)="submit()">
+                <p>Username</p>
+                <div class="input_wrapper">
+                    <i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none">
+                        <path d="M19.7274 20.4471C19.2716 19.1713 18.2672 18.0439 16.8701 17.2399C15.4729 16.4358 13.7611 16 12 16C10.2389 16 8.52706 16.4358 7.12991 17.2399C5.73276 18.0439 4.72839 19.1713 4.27259 20.4471" stroke="#222222" stroke-linecap="round"/>
+                        <circle cx="12" cy="8" r="4" stroke="#222222" stroke-linecap="round"/>
+                        </svg></i>
+                    <input type="text" formControlName="username">
+                </div>
+                <p>Password</p>
+                <div class="input_wrapper">
+                    <i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 31 35" fill="none">
+                        <path d="M1.16669 16.125C1.16669 14.2394 1.16669 13.2966 1.75247 12.7108C2.33826 12.125 3.28107 12.125 5.16669 12.125H25.8334C27.719 12.125 28.6618 12.125 29.2476 12.7108C29.8334 13.2966 29.8334 14.2394 29.8334 16.125V27.625C29.8334 30.4534 29.8334 31.8676 28.9547 32.7463C28.076 33.625 26.6618 33.625 23.8334 33.625H7.16668C4.33826 33.625 2.92405 33.625 2.04537 32.7463C1.16669 31.8676 1.16669 30.4534 1.16669 27.625V16.125Z" stroke="#33363F" stroke-width="2"/>
+                        <path d="M22.6667 10.3333V8.54167C22.6667 6.52445 22.6667 5.51584 22.3799 4.70596C21.8764 3.28398 20.7577 2.16534 19.3357 1.66179C18.5259 1.375 17.5173 1.375 15.5 1.375V1.375C13.4828 1.375 12.4742 1.375 11.6643 1.66179C10.2424 2.16534 9.12372 3.28398 8.62017 4.70596C8.33337 5.51584 8.33337 6.52445 8.33337 8.54167V10.3333" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
+                        </svg></i>
+                    <input type="password" formControlName="password">
+                </div>
+                <div class="button_container">
+                    <button type="submit" class="button">Sign in</button>
+                </div>
+            </form>
+            <div class="sign_up_container">
+                <p>Don’t have an account yet?<span [routerLink]="['/register']" routerLinkActive="router-link-active" >Sign up</span></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="header">
+    <i><svg xmlns="http://www.w3.org/2000/svg" width="70" height="68" viewBox="0 0 70 68" fill="none">
+        <path d="M27.8571 63.5C27.4857 63.5 26.8949 63.3574 26.4037 62.9205C25.9291 62.4984 25.5 61.7594 25.5 60.4706V46.53L35 34.7947L44.5 46.53V60.4706C44.5 61.7594 44.0709 62.4984 43.5963 62.9205C43.1051 63.3574 42.5143 63.5 42.1429 63.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M27.8571 2.5C27.4857 2.5 26.8949 2.64259 26.4037 3.07949C25.9291 3.50161 25.5 4.24061 25.5 5.52941V19.47L35 31.2053L44.5 19.47V5.52941C44.5 4.24061 44.0709 3.50161 43.5963 3.07949C43.1051 2.64259 42.5143 2.5 42.1429 2.5H27.8571Z" stroke="#2168F3"/>
+        <path d="M4.5 25.8571C4.5 25.4857 4.64259 24.8949 5.07949 24.4037C5.50161 23.9291 6.24061 23.5 7.52941 23.5L21.47 23.5L33.2053 33L21.47 42.5L7.52941 42.5C6.24061 42.5 5.50161 42.0709 5.07949 41.5963C4.64259 41.1051 4.5 40.5143 4.5 40.1429L4.5 25.8571Z" fill="#2168F3" stroke="#2168F3"/>
+        <path d="M65.5 25.8571C65.5 25.4857 65.3574 24.8949 64.9205 24.4037C64.4984 23.9291 63.7594 23.5 62.4706 23.5L48.53 23.5L36.7947 33L48.53 42.5L62.4706 42.5C63.7594 42.5 64.4984 42.0709 64.9205 41.5963C65.3574 41.1051 65.5 40.5143 65.5 40.1429L65.5 25.8571Z" stroke="#2168F3"/>
+        </svg>
+    </i>
+    <p>PlayGround Central</p>
+</div>
+<div class="container" *ngIf="success">
+    <div class="alert alert-success" role="alert">
+        {{successMessage}}
+    </div>
+</div>
+<div class="container">
+    <div class="profile_picture_container">
+        <div class="profile">
+            <img *ngIf="customerInfo?.profile" class="profile_image" [src]="path + customerInfo.profile" alt="Profile Picture">
+        </div>
+    </div>
+    <form>
+        <div class="profile_details">
+            <div class="wrapper">
+                First Name
+                <input type="text" name="first_name" [(ngModel)]="customerInfo.first_name">
+                Last Name
+                <input type="text" name="last_name" [(ngModel)]="customerInfo.last_name">
+                Age
+                <input type="text"  name="age" [(ngModel)]="customerInfo.age">
+                Address
+                <input type="text" name="address" [(ngModel)]="customerInfo.address">
+                Profile
+                <input type="file"  (change)="imageUpload($event)">
+            </div>
+        </div>
+        <div class="button_container">
+            <button [routerLink]="['/shop/console']" >Close</button>
+            <button (click)="updateProfile()">Update Profile</button>
+        </div>
+    </form>
+</div>
